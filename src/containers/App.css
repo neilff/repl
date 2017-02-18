@@ -1,0 +1,16 @@
+.app {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.app__row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.app__column {
+  flex: 1 1 auto;
+  display: flex;
+}

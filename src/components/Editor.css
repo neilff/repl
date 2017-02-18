@@ -1,0 +1,8 @@
+.editor {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.editor__input {
+  flex: 1 1 auto;
+}

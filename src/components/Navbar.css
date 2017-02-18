@@ -1,0 +1,9 @@
+.navbar {
+  padding: 15px 10px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.navbar__title {
+  font-size: 18px;
+}

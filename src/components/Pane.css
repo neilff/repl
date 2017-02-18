@@ -1,0 +1,18 @@
+.pane {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.pane__title {
+  padding: 5px 10px;
+  background-color: var(--silver);
+  color: var(--black);
+  font-size: 12px;
+}
+
+.pane__content {
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex: 1 1 auto;
+}
