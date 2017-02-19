@@ -2,15 +2,23 @@ import React, { PropTypes, Component } from 'react';
 import bemify from 'bemify-js';
 import _ from 'lodash';
 
-import CodeMirror from 'react-codemirror';
-
 import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript';
 import './Editor.css';
 
 const bem = bemify('editor');
 
+import CodeMirror from 'react-codemirror';
+
 const editorConfiguration = {
   lineNumbers: true,
+  viewportMargin: Infinity,
+  mode: {
+    name: 'javascript',
+    statementIndent: 2,
+  },
+  indentUnit: 2,
+  tabSize: 2,
 };
 
 class Editor extends Component {

@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import * as Babel from 'babel-standalone';
 import _ from 'lodash';
 import R from 'ramda';
@@ -5,37 +7,34 @@ import Immutable from 'immutable';
 
 // Expose libraries for the REPL onto window
 global.Babel = Babel;
-global.R = R;
-global._ = _;
 global.Immutable = Immutable;
+global.R = R;
+global.React = React;
+global.ReactDOM = ReactDOM;
+global._ = _;
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import base64 from 'base-64';
+import configureStore from './store/configureStore';
+import history from './common/history';
 import { Provider } from 'react-redux';
-import createLogger from 'redux-logger';
-import thunk from 'redux-thunk';
-import reducer from './reducers';
+import { parse } from 'query-string';
 
 import App from './containers/App';
 
 import './reset.css';
 import './index.css';
 
-const middleware = [thunk];
+const initialState = parse(history.location.search);
 
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
-
-const store = createStore(
-  reducer,
-  applyMiddleware(...middleware)
-);
+const store = configureStore({
+  code: {
+    value: initialState.q ? base64.decode(initialState.q) : '',
+  },
+});
 
 ReactDOM.render(
   <Provider store={ store }>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

@@ -15,3 +15,7 @@
   display: flex;
   width: 50%;
 }
+
+.app__column:first-child {
+  border-right: 1px solid var(--black);
+}
