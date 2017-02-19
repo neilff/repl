@@ -13,4 +13,5 @@
 .app__column {
   flex: 1 1 auto;
   display: flex;
+  width: 50%;
 }

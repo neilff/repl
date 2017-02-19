@@ -1,3 +1,14 @@
+import * as Babel from 'babel-standalone';
+import _ from 'lodash';
+import R from 'ramda';
+import Immutable from 'immutable';
+
+// Expose libraries for the REPL onto window
+global.Babel = Babel;
+global.R = R;
+global._ = _;
+global.Immutable = Immutable;
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';

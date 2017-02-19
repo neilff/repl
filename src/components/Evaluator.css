@@ -1,0 +1,7 @@
+.evaluator {
+  padding: var(--default-padding);
+}
+
+.evaluator__error {
+  color: var(--red);
+}

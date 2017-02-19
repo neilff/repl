@@ -4,8 +4,12 @@
   flex-direction: column;
 }
 
+.pane:first-child {
+  border-right: 1px solid var(--black);
+}
+
 .pane__title {
-  padding: 5px 10px;
+  padding: 5px var(--default-padding);
   background-color: var(--silver);
   color: var(--black);
   font-size: 12px;
