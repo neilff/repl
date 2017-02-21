@@ -1,9 +1,10 @@
+import * as Babel from 'babel-standalone';
+import Immutable from 'immutable';
+import R from 'ramda';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as Babel from 'babel-standalone';
 import _ from 'lodash';
-import R from 'ramda';
-import Immutable from 'immutable';
+import fp from 'lodash/fp';
 
 // Expose libraries for the REPL onto window
 global.Babel = Babel;
@@ -12,6 +13,7 @@ global.R = R;
 global.React = React;
 global.ReactDOM = ReactDOM;
 global._ = _;
+global.fp = fp;
 
 import base64 from 'base-64';
 import configureStore from './store/configureStore';
