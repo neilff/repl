@@ -15,4 +15,5 @@
   font-family: 'Inconsolata', monospace;
   display: flex;
   flex: 1 1 auto;
+  overflow-y: auto;
 }
