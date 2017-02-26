@@ -24,10 +24,11 @@
     "redux": "3.6.0",
     "redux-logger": "2.8.1",
     "redux-thunk": "2.2.0",
-    "reselect": "2.5.4"
+    "reselect": "2.5.4",
+    "sw-precache": "5.0.0"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
