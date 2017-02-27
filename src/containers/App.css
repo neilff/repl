@@ -6,16 +6,30 @@
 
 .app__row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1 1 auto;
 }
 
 .app__column {
   flex: 1 1 auto;
   display: flex;
-  width: 50%;
+  width: 100%%;
 }
 
 .app__column:first-child {
-  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+@media (min-width: 920px) {
+  .app__row {
+    flex-direction: row;
+  }
+
+  .app__column {
+    width: 50%;
+  }
+
+  .app__column:first-child {
+    border-right: 1px solid var(--black);
+  }
 }
