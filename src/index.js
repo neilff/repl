@@ -35,7 +35,8 @@ const scripts = Array.isArray(initialState.script) ?
 const store = configureStore({
   code: {
     value: initialState.q ? base64.decode(initialState.q) : '',
-    gist: initialState.gist
+    gist: initialState.gist,
+    stringify: initialState.stringify,
   },
   script: {
     scripts: scripts.map((url) => ({

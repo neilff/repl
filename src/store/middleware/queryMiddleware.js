@@ -20,9 +20,14 @@ export default function queryMiddleware({getState}) {
     };
 
     const scripts = getState().script.scripts;
+    const jsonStringify = getState().code.stringify;
 
     if (scripts.length > 0) {
       query.script = scripts.map((script) => script.url);
+    }
+
+    if (jsonStringify) {
+      query.stringify = jsonStringify;
     }
 
     const queryString = stringify(query);
