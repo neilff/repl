@@ -5,4 +5,5 @@ export const CODE = createTypes('CODE', [
   'CHANGE_VALUE',
 ]);
 
-export const changeValue = (value) => createAction(CODE.CHANGE_VALUE, { value });
+export const changeValue = (value, { gist } = {}) =>
+  createAction(CODE.CHANGE_VALUE, { value, gist });

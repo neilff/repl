@@ -10,6 +10,11 @@ export default function queryMiddleware({getState}) {
       return next(action);
     }
 
+    // Don't update the URL if this change is from a gist parameter.
+    if (action.payload.gist) {
+      return next(action);
+    }
+
     const query = {
       q: base64.encode(action.payload.value)
     };

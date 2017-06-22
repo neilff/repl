@@ -40,7 +40,7 @@ class InputContainer extends React.Component {
           }
         })
         .then((file) => {
-          this.props.changeValue(file.content);
+          this.props.changeValue(file.content, { gist });
         })
     }
   }
@@ -62,7 +62,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeValue: (value) => dispatch(codeActions.changeValue(value)),
+  changeValue: (value, options) => dispatch(codeActions.changeValue(value, options)),
 });
 
 export default connect(
