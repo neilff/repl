@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Evaluator from '../components/Evaluator';
+import EvaluatorScriptsDelay from '../containers/EvaluatorScriptsDelay';
 import Pane from '../components/Pane';
 
 const OutputContainer = (props) => (
   <Pane title="Output">
-    <Evaluator value={ props.value } />
+    <EvaluatorScriptsDelay value={ props.value } />
   </Pane>
 );
 

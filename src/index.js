@@ -31,7 +31,15 @@ const initialState = parse(history.location.search);
 const store = configureStore({
   code: {
     value: initialState.q ? base64.decode(initialState.q) : '',
+    gist: initialState.gist
   },
+  script: {
+    scripts: initialState.scripts ? (
+      initialState.scripts.split(',').map((url) =>
+        ({url, isReady: false})
+      )
+    ) : [],
+  }
 });
 
 ReactDOM.render(
