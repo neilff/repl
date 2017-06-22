@@ -17,7 +17,7 @@ export default function queryMiddleware({getState}) {
     const scripts = getState().script.scripts;
 
     if (scripts.length > 0) {
-      query.scripts = scripts.map((script) => script.url);
+      query.script = scripts.map((script) => script.url);
     }
 
     const queryString = stringify(query);
