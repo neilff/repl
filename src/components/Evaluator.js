@@ -1,10 +1,17 @@
 import React, { PropTypes } from 'react';
-import stringify from 'json-stringify-pretty-compact';
+import stringifyCompact from 'json-stringify-pretty-compact';
+import stringifyObject from 'stringify-object';
 import bemify from 'bemify-js';
 
 import './Evaluator.css';
 
 const bem = bemify('evaluator');
+
+const stringifiers = {
+  compact: stringifyCompact,
+  expand: (json) => JSON.stringify(json, null, 2),
+  object: (json) => stringifyObject(json, {indent: '  '}),
+}
 
 const Evaluator = (props) => {
   let result = null;
@@ -21,6 +28,8 @@ const Evaluator = (props) => {
   } catch (ex) {
     error = ex.toString();
   }
+
+  const stringify = stringifiers[props.stringify] || stringifiers.compact;
 
   const content = !error ?
     stringify(result) :

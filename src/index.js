@@ -28,10 +28,22 @@ import './index.css';
 
 const initialState = parse(history.location.search);
 
+const scripts = Array.isArray(initialState.script) ?
+  initialState.script :
+  initialState.script ? [initialState.script] : [];
+
 const store = configureStore({
   code: {
     value: initialState.q ? base64.decode(initialState.q) : '',
+    gist: initialState.gist,
+    stringify: initialState.stringify,
   },
+  script: {
+    scripts: scripts.map((url) => ({
+      url: decodeURIComponent(url),
+      isReady: false
+    })),
+  }
 });
 
 ReactDOM.render(
